@@ -1,0 +1,8 @@
+yum erase postfix
+yum -y install sendmail mailutils mailx sendmail-bin sendmail-cf cyrus-sasl-plain
+cp /etc/mail/sendmail.mc /etc/mail/sendmail.mc.orig
+setsebool httpd_can_sendmail on
+make -C /etc/mail
+
+
+# Lembrando copie o arquivo sendmail.mc do diretorio /etc/mail/
